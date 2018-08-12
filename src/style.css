@@ -5,5 +5,22 @@
 
 .hide {
   opacity: 0;
-  transition: all 1s ease-in;
+  /* transition: all 1s ease-in; */
+  /* forwards: 保持最后一针(100%)效果 */
+  animation: hide-item 2s ease-in forwards;
+}
+
+@keyframes hide-item {
+  0% {
+    opacity: 1;
+    color: #f00;
+  }
+  50% {
+    opacity: 0.5;
+    color: #0f0;
+  }
+  100% {
+    opacity: 0;
+    color: #00f;
+  }
 }
