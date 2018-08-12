@@ -15,16 +15,29 @@ class TodoList extends Component {
 			// Fragment: 占位符
 			<Fragment>
 				<div>
+          {/* htmlFor: like 'for', focus */}
+          <label htmlFor='insert'>input value:</label>
 					<input
+            id='insert'
+            className='input'
 						value={this.state.inputValue}
-						onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange.bind(this)}
 					/>
 					<button onClick={this.handleClick.bind(this)}>submit</button>
 				</div>
 				<ul>
 					{
             this.state.list.map((item, index) => {
-						  return <li key={index} onClick={this.handleDelete.bind(this)}>{item}</li>
+              return (
+                <li 
+                  key={index}
+                  onClick={this.handleDelete.bind(this)}
+                  // can write <h1>hello</h1>
+                  dangerouslySetInnerHTML={{__html: item}}
+                >
+                  {/* {item} */}
+                </li>
+              )
             })
           }
 				</ul>
@@ -34,7 +47,7 @@ class TodoList extends Component {
 
 	handleChange(e) {
     // change data
-    // state not allow to change
+    // immutable: state not allow to change
 		this.setState({
       // cover origin data
 			inputValue: e.target.value
