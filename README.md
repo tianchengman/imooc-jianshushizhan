@@ -1,5 +1,9 @@
 # imooc-jianshu
 
+> React16.4 开发简书项目 从零基础入门到实战
+
+- 运行
+
 ```console
 npm install
 npm run start
