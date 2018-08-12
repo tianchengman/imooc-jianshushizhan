@@ -91,6 +91,7 @@ class TodoList extends Component {
 				inputValue: ''
 			}
     }, () => {
+      // ensure async setState() has been invoked
       console.log(this.ul.querySelectorAll('div').length)  
     })
 	}

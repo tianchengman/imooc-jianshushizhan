@@ -86,3 +86,5 @@ create-react-app imooc-jiansh
 - kye={index} 不合适, key={item} 合适, 提高循环能力
 
 ## 4-7 React 中 ref 的使用
+
+## 4-8 React的生命周期函数
