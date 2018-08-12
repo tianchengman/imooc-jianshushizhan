@@ -88,3 +88,12 @@ create-react-app imooc-jiansh
 ## 4-7 React 中 ref 的使用
 
 ## 4-8 React的生命周期函数
+
+## 4-9 React 生命周期函数的使用场景
+
+- TodoList.js
+- TodoItem.js
+
+```console
+npm install axios -S
+```

@@ -1,12 +1,13 @@
 ﻿import React, { Component, Fragment } from 'react'
+import axios from 'axios'
 import TodoItem from './TodoItem'
 
 class TodoList extends Component {
 	constructor(props) {
 		// invoked father constructor
 		super(props)
-    // data define
-    // render() re-render when state and props change
+		// data define
+		// render() re-render when state and props change
 		this.state = {
 			inputValue: '',
 			list: []
@@ -14,10 +15,10 @@ class TodoList extends Component {
 		this.handleChange = this.handleChange.bind(this)
 		this.handleClick = this.handleClick.bind(this)
 		this.handleDelete = this.handleDelete.bind(this)
-  }
-  
+	}
+
 	render() {
-    console.log('render')
+		console.log('render')
 		return (
 			// Fragment: Placeholder
 			<Fragment>
@@ -28,42 +29,58 @@ class TodoList extends Component {
 						id="insert"
 						className="input"
 						value={this.state.inputValue}
-            onChange={this.handleChange}
-            ref={(input) => {this.input = input}}
+						onChange={this.handleChange}
+						ref={input => {
+							this.input = input
+						}}
 					/>
 					<button onClick={this.handleClick}>submit</button>
 				</div>
-				<ul ref={(ul) => {this.ul = ul}}>{this.getTodoItem()}</ul>
+				<ul
+					ref={ul => {
+						this.ul = ul
+					}}
+				>
+					{this.getTodoItem()}
+				</ul>
 			</Fragment>
 		)
-  }
-  
-  // Mounting
-  // 组件即将挂载到页面的时刻执行
-  componentWillMount() {
-    console.log('componentWillMount')
-  }
-  // render()
-  // 组件被挂载到页面之后执行
-  componentDidMount() {
-    console.log('componentWillMount')
-  }
+	}
 
-  // Updation
-  // 组件被更新之前执行, 你的组件需要被更新吗?
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate')
-    return true
-  }
-  // 组件被更新之前执行, shouldComponentUpdate return true 才执行
-  componentWillUpdate() {
-    console.log('componentWillUpdate')
-  }
-  // render()
-  // 组件更新完成之后执行
-  componentDidUpdate() {
-    console.log('componentDidUpdate')
-  }
+	// Mounting
+	// 组件即将挂载到页面的时刻执行
+	componentWillMount() {
+		console.log('componentWillMount')
+	}
+	// render()
+	// 组件被挂载到页面之后执行, 获取 ajax 数据
+	componentDidMount() {
+		console.log('componentWillMount')
+		axios
+			.get('/api/todolist')
+			.then(() => {
+				alert('success')
+			})
+			.catch(() => {
+				alert('err')
+			})
+	}
+
+	// Updation
+	// 组件被更新之前执行, 你的组件需要被更新吗?
+	shouldComponentUpdate() {
+		console.log('shouldComponentUpdate')
+		return true
+	}
+	// 组件被更新之前执行, shouldComponentUpdate return true 才执行
+	componentWillUpdate() {
+		console.log('componentWillUpdate')
+	}
+	// render()
+	// 组件更新完成之后执行
+	componentDidUpdate() {
+		console.log('componentDidUpdate')
+	}
 
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
@@ -90,17 +107,17 @@ class TodoList extends Component {
 	}
 
 	handleChange(e) {
-    // const value = e.target.value
-    const value = this.input.value
-    // Can be omitted 'return', async
-    // this.setState(() => ({
+		// const value = e.target.value
+		const value = this.input.value
+		// Can be omitted 'return', async Performance optimization
+		// this.setState(() => ({
 		// 	inputValue: value
 		// }))
 		this.setState(() => {
 			return {
 				inputValue: value
 			}
-    })
+		})
 		// change data
 		// immutable: state not allow to change
 		// this.setState({
@@ -114,15 +131,18 @@ class TodoList extends Component {
 		// 	list: [...this.state.list, this.state.inputValue],
 		// 	inputValue: ''
 		// })
-		this.setState(prevState => {
-			return {
-				list: [...prevState.list, prevState.inputValue],
-				inputValue: ''
+		this.setState(
+			prevState => {
+				return {
+					list: [...prevState.list, prevState.inputValue],
+					inputValue: ''
+				}
+			},
+			() => {
+				// ensure async setState() has been invoked
+				console.log(this.ul.querySelectorAll('div').length)
 			}
-    }, () => {
-      // ensure async setState() has been invoked
-      console.log(this.ul.querySelectorAll('div').length)  
-    })
+		)
 	}
 
 	handleDelete(index) {
