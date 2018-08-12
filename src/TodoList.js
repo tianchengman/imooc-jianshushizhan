@@ -5,7 +5,8 @@ class TodoList extends Component {
 	constructor(props) {
 		// invoked father constructor
 		super(props)
-		// data define
+    // data define
+    // render() re-render when state and props change
 		this.state = {
 			inputValue: '',
 			list: []
@@ -16,7 +17,7 @@ class TodoList extends Component {
 	}
 	render() {
 		return (
-			// Fragment: 占位符
+			// Fragment: Placeholder
 			<Fragment>
 				<div>
 					{/* htmlFor: like 'for', focus */}

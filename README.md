@@ -53,3 +53,24 @@ create-react-app imooc-jiansh
 - 单向数据流
 - 视图层框架
 - 函数式编程
+
+## 4-1 React developer tools 安装及使用
+
+## 4-2 PropTypes 与 DefaultProps 的应用
+
+- TodoItem.js
+
+## 4-3 props，state 与 render 函数的关系
+
+## 4-4 React 中的虚拟DOM
+
+1. state 数据
+2. JSX 模板
+3. 数据 + 模板 结合，生成真实 DOM 来显示
+4. 生成虚拟 DOM (虚拟 DOM 是 JS 对象，用它来描述真实 DOM) ['div',{id:'abc'},['span',{},'hello world']]
+5. state 变化
+6. 数据 + 模板 生成新的虚拟 DOM ['div', {id: 'abc'}, ['span', {}, 'bye']]
+7. 比较原始虚拟 DOM 和 新的虚拟 DOM 区别，找到区别
+8. 操作 DOM，改变区别里的内容
+
+## 4-5 深入了解虚拟DOM
