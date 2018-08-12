@@ -40,3 +40,7 @@ create-react-app imooc-jiansh
 
 - TodoList.js
 - TodoItem.js
+
+## 3-6 TodoList 代码优化
+
+- TodoList.js
