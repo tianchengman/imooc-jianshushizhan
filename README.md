@@ -127,3 +127,7 @@ cnpm install antd -S
 ```
 
 ## 5-4 创建 redux 中的 store_x264
+
+## 5-5 Action 和 Reducer 的编写
+
+- Todo.js
