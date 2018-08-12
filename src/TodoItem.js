@@ -9,6 +9,9 @@ class TodoItem extends Component {
 
 	render() {
     const {content, test} = this.props
+    // JSX -> createElement -> virtual DOM (JS object) -> real DOM
+    // return <div><span>hello</span></div>
+    // return React.createElement('div', {}, React.createElement('span', {}, 'hello'))
 		return (
       <div onClick={this.handleClick}>{test}-{content}</div>
     )
@@ -23,8 +26,8 @@ class TodoItem extends Component {
 // Incoming parameter check
 TodoItem.propTypes = {
   test: PropTypes.string.isRequired,
-  content: PropTypes.arrayOf(PropTypes.string, PropTypes.string),
-  deleteItem: PropTypes.funcs,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.string]),
+  deleteItem: PropTypes.func,
   index: PropTypes.number
 }
 

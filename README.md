@@ -64,13 +64,25 @@ create-react-app imooc-jiansh
 
 ## 4-4 React 中的虚拟DOM
 
+- 原理:
 1. state 数据
 2. JSX 模板
-3. 数据 + 模板 结合，生成真实 DOM 来显示
-4. 生成虚拟 DOM (虚拟 DOM 是 JS 对象，用它来描述真实 DOM) ['div',{id:'abc'},['span',{},'hello world']]
+3. 数据 + 模板 生成虚拟 DOM (虚拟 DOM 是 JS 对象，用它来描述真实 DOM) `['div',{id:'abc'},['span',{},'hello world']]`
+4. 用虚拟 DOM 生成真实 DOM 来显示 `<div id='abc'><span>hello </span></div>`
 5. state 变化
-6. 数据 + 模板 生成新的虚拟 DOM ['div', {id: 'abc'}, ['span', {}, 'bye']]
-7. 比较原始虚拟 DOM 和 新的虚拟 DOM 区别，找到区别
+6. 数据 + 模板 生成新的虚拟 DOM `['div', {id: 'abc'}, ['span', {}, 'bye']]`
+7. 比较原始虚拟 DOM 和 新的虚拟 DOM 区别，找到区别, diff 算法
 8. 操作 DOM，改变区别里的内容
 
+- 优点:
+1. 性能提升 (JS 对象)
+2. 跨平台 React Native
+
 ## 4-5 深入了解虚拟DOM
+
+## 4-6 虚拟 DOM 中的 Diff 算法
+
+- 同层比对
+- kye={index} 不合适, key={item} 合适, 提高循环能力
+
+## 4-7 React 中 ref 的使用

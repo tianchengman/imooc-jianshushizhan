@@ -26,11 +26,12 @@ class TodoList extends Component {
 						id="insert"
 						className="input"
 						value={this.state.inputValue}
-						onChange={this.handleChange}
+            onChange={this.handleChange}
+            ref={(input) => {this.input = input}}
 					/>
 					<button onClick={this.handleClick}>submit</button>
 				</div>
-				<ul>{this.getTodoItem()}</ul>
+				<ul ref={(ul) => {this.ul = ul}}>{this.getTodoItem()}</ul>
 			</Fragment>
 		)
 	}
@@ -38,16 +39,16 @@ class TodoList extends Component {
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
 			return (
-				<div key={index}>
+				<div key={item}>
 					{/*
-          <li 
+          <li
             key={index}
             onClick={this.handleDelete.bind(this)}
             // can write <h1>hello</h1>
             dangerouslySetInnerHTML={{__html: item}}
           >
-            {item} 
-          </li> 
+            {item}
+          </li>
           */}
 					<TodoItem
 						content={item}
@@ -60,8 +61,9 @@ class TodoList extends Component {
 	}
 
 	handleChange(e) {
-    const value = e.target.value
-    // Can be omitted 'return'
+    // const value = e.target.value
+    const value = this.input.value
+    // Can be omitted 'return', async
     // this.setState(() => ({
 		// 	inputValue: value
 		// }))
@@ -88,7 +90,9 @@ class TodoList extends Component {
 				list: [...prevState.list, prevState.inputValue],
 				inputValue: ''
 			}
-		})
+    }, () => {
+      console.log(this.ul.querySelectorAll('div').length)  
+    })
 	}
 
 	handleDelete(index) {
