@@ -115,3 +115,15 @@ npm install axios -S
 ```console
 cnpm install react-transition-group -S
 ```
+
+## 5-1 Redux 概念简述
+
+## 5-2 Redux 的工作流程
+
+## 5-3 使用 Antd 实现 TodoList 页面布局
+
+```console
+cnpm install antd -S
+```
+
+## 5-4 创建 redux 中的 store_x264
