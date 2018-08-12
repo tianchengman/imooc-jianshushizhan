@@ -17,3 +17,7 @@ create-react-app imooc-jiansh
 ```
 
 ## 2-3 工程目录文件简介
+
+## 2-4 react中的组件
+
+## 2-5 React 中最基础的JSX语法
