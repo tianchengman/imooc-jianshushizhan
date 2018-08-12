@@ -35,3 +35,8 @@ create-react-app imooc-jiansh
 ## 3-4 JSX语法细节补充
 
 - TodoList.js
+
+## 3-5 拆分组件与组件之间的传值
+
+- TodoList.js
+- TodoItem.js
