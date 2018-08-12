@@ -14,8 +14,10 @@ class TodoList extends Component {
 		this.handleChange = this.handleChange.bind(this)
 		this.handleClick = this.handleClick.bind(this)
 		this.handleDelete = this.handleDelete.bind(this)
-	}
+  }
+  
 	render() {
+    console.log('render')
 		return (
 			// Fragment: Placeholder
 			<Fragment>
@@ -34,7 +36,34 @@ class TodoList extends Component {
 				<ul ref={(ul) => {this.ul = ul}}>{this.getTodoItem()}</ul>
 			</Fragment>
 		)
-	}
+  }
+  
+  // Mounting
+  // 组件即将挂载到页面的时刻执行
+  componentWillMount() {
+    console.log('componentWillMount')
+  }
+  // render()
+  // 组件被挂载到页面之后执行
+  componentDidMount() {
+    console.log('componentWillMount')
+  }
+
+  // Updation
+  // 组件被更新之前执行, 你的组件需要被更新吗?
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate')
+    return true
+  }
+  // 组件被更新之前执行, shouldComponentUpdate return true 才执行
+  componentWillUpdate() {
+    console.log('componentWillUpdate')
+  }
+  // render()
+  // 组件更新完成之后执行
+  componentDidUpdate() {
+    console.log('componentDidUpdate')
+  }
 
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
