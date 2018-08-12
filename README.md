@@ -44,3 +44,12 @@ create-react-app imooc-jiansh
 ## 3-6 TodoList 代码优化
 
 - TodoList.js
+
+## 3-7 围绕 React 衍生出的思考
+
+- 声明式开发
+- 可以和其它框架并存
+- 组件化
+- 单向数据流
+- 视图层框架
+- 函数式编程
