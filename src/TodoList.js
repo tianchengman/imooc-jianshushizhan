@@ -60,9 +60,11 @@ class TodoList extends Component {
 
 	handleChange(e) {
 		const value = e.target.value
-		this.setState(() => ({
-			inputValue: value
-		}))
+		this.setState(() => {
+      return {
+        inputValue: value
+      }
+		})
 		// change data
 		// immutable: state not allow to change
 		// this.setState({
@@ -76,10 +78,12 @@ class TodoList extends Component {
 		// 	list: [...this.state.list, this.state.inputValue],
 		// 	inputValue: ''
 		// })
-		this.setState(prevState => ({
-			list: [...prevState.list, prevState.inputValue],
-			inputValue: ''
-		}))
+		this.setState(prevState => {
+      return {
+        list: [...prevState.list, prevState.inputValue],
+			  inputValue: ''
+      }
+		})
 	}
 
 	handleDelete(index) {
