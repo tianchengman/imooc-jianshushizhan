@@ -107,3 +107,11 @@ npm install axios -S
 ## 4-12 React 中使用 CSS 动画效果
 
 - style.css
+
+## 4-13, 4-14 使用 react-transition-group 实现动画
+
+- App.js
+
+```console
+cnpm install react-transition-group -S
+```

@@ -24,3 +24,35 @@
     color: #00f;
   }
 }
+
+/* 动画还没有入场 */
+.fade-enter, .fade-appear {
+  opacity: 0;
+}
+
+/* 入场第二个时刻到最后 */
+.fade-enter-active, .fade-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+/* 入场动画完成后 */
+.fade-enter-done {
+  opacity: 1;
+}
+
+/* 出场动画第一个时刻 */
+.fade-exit {
+  opacity: 1;
+}
+
+/* 出场执行过程 */
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+/* 出场动画完成 */
+.fade-exit-done {
+  opacity: 0;
+}
