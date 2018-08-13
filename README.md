@@ -158,3 +158,7 @@ cnpm install antd -S
 - TodoUI.js
 - 当一个组件只有 render() 的时候，可以使用无状态组件替换
 - 无状态组件性能高
+
+## 6-3 Redux 中发送异步请求获取数据
+
+- 不会使用 charles

@@ -10,9 +10,11 @@ import store from './store/index'
 import {
 	getInputChangeAction,
 	getAddItemAction,
-	getDeleteItemAction
+  getDeleteItemAction,
+  initListAction
 } from './store/actionCreators'
 import TodoUI from './TodoUI'
+import axios from 'axios'
 
 class Todo extends Component {
 	constructor(props) {
@@ -37,6 +39,27 @@ class Todo extends Component {
         handleItemClick={this.handleItemClick}
 			/>
 		)
+  }
+  
+  // 组件被挂载到页面之后执行, 获取 ajax 数据
+	componentDidMount() {
+		console.log('componentWillMount')
+		axios
+			.get('/todolist.json')
+			.then(res => {
+        console.log(res.data)
+        const data = res.data
+        const action = initListAction(data)
+        store.dispatch(action)
+				// this.setState(() => {
+				// 	return {
+				// 		list: [...res.data]
+				// 	}
+				// })
+			})
+			.catch(() => {
+				alert('err')
+			})
 	}
 
 	handleInputChange(e) {
