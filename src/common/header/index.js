@@ -70,6 +70,7 @@ class Header extends Component {
 
 const mapStateToProps = state => {
 	return {
+    // immutable 数据调用
 		focused: state.getIn(['header', 'focused']),
 		list: state.getIn(['header', 'list']),
 		page: state.getIn(['header', 'page']),

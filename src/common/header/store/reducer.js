@@ -11,7 +11,8 @@ const defaultState = fromJS({
 
 export default (state = defaultState, action) => {
 	switch (action.type) {
-		case constants.SEARCH_FOCUS:
+    case constants.SEARCH_FOCUS:
+      // immutable set 方法, 返回一个新数据
 			return state.set('focused', true)
 		case constants.SEARCH_BLUR:
 			return state.set('focused', false)

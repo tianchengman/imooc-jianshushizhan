@@ -207,3 +207,11 @@ cnpm install styled-components -S
 ## 7-7 使用 combineReducers 完成对数据的拆分管理
 
 ## 7-8 actionCreators 与 constants 的拆分
+
+## 7-9 使用 Immutable.js 来管理store中的数据
+
+- immutable 不可被变更
+
+```console
+cnpm install immutable -S
+```
