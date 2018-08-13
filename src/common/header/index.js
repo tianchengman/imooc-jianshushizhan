@@ -26,7 +26,7 @@ class Header extends Component {
 			focused,
 			handleInputFocus,
 			handleInputBlur,
-			list,
+			list
 			// login,
 			// logout
 		} = this.props

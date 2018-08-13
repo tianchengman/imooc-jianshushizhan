@@ -201,3 +201,5 @@ cnpm install styled-components -S
 ## 7-4 使用 iconfont 嵌入头部图标
 
 ## 7-5 搜索框动画效果实现
+
+## 7-6 使用 React-Redux 进行应用数据的管理
