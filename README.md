@@ -235,3 +235,5 @@ cnpm install redux-immutable -S
 - header/store/actionCreator.js
 - header/store/reducer.js
 - index.js
+
+## 7-15 换页旋转动画效果的实现
