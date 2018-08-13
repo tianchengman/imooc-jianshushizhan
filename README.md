@@ -133,3 +133,5 @@ cnpm install antd -S
 - Todo.js
 
 ## 5-6 使用 Redux 完成 TodoList 删除功能_x264
+
+## 5-7 ActionTypes 的拆分
