@@ -147,3 +147,8 @@ cnpm install antd -S
 - store.dispatch
 - store.getState
 - store.subscribe
+
+## 6-1 UI组件和容器组件
+
+- TodoUI.js
+- Todo.js

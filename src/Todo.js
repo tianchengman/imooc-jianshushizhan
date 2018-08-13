@@ -12,6 +12,7 @@ import {
 	getAddItemAction,
 	getDeleteItemAction
 } from './store/actionCreators'
+import TodoUI from './TodoUI'
 
 class Todo extends Component {
 	constructor(props) {
@@ -21,35 +22,20 @@ class Todo extends Component {
 		this.handleInputChange = this.handleInputChange.bind(this)
 		this.handleStoreChange = this.handleStoreChange.bind(this)
 		this.handleBtnClick = this.handleBtnClick.bind(this)
+		this.handleItemClick = this.handleItemClick.bind(this)
 		// Store 数据改变, 里面的函数自动执行
 		store.subscribe(this.handleStoreChange)
 	}
 
 	render() {
 		return (
-			<div style={{ margin: '10px' }}>
-				<div>
-					<Input
-						placeholder="input"
-						style={{ width: '300px', marginRight: '10px' }}
-						value={this.state.inputValue}
-						onChange={this.handleInputChange}
-					/>
-					<Button type="primary" onClick={this.handleBtnClick}>
-						submit
-					</Button>
-				</div>
-				<List
-					style={{ marginTop: '10px', width: '300px' }}
-					bordered
-					dataSource={this.state.list}
-					renderItem={(item, index) => (
-						<List.Item onClick={this.handleItemClick.bind(this, index)}>
-							{item}
-						</List.Item>
-					)}
-				/>
-			</div>
+			<TodoUI
+        list={this.state.list}
+				inputValue={this.state.inputValue}
+        handleInputChange={this.handleInputChange}
+        handleBtnClick={this.handleBtnClick}
+        handleItemClick={this.handleItemClick}
+			/>
 		)
 	}
 
