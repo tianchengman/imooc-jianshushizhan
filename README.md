@@ -197,3 +197,5 @@ cnpm install styled-components -S
 ## 7-2, 7-3 使用 styled-components 完成 Header 组件布局
 
 - header/index.js
+
+## 7-4 使用 iconfont 嵌入头部图标

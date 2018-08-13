@@ -33,7 +33,10 @@ class Header extends Component {
 					<NavItem className="right">
 						<i className="iconfont">&#xe636;</i>
 					</NavItem>
-          <NavSearch></NavSearch>
+					<SearchWrapper>
+						<NavSearch className="focused" />
+						<i className="focused iconfont zoom">&#xe614;</i>
+					</SearchWrapper>
 				</Nav>
 				<Addition>
 					<Link to="/write">
