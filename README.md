@@ -215,3 +215,9 @@ cnpm install styled-components -S
 ```console
 cnpm install immutable -S
 ```
+
+## 7-10 使用 redux-immutable 统一数据格式
+
+```console
+cnpm install redux-immutable -S
+```
