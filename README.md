@@ -239,3 +239,11 @@ cnpm install redux-immutable -S
 ## 7-15 换页旋转动画效果的实现
 
 ## 7-16 避免无意义的请求发送，提升组件性能
+
+## 8-1 什么是路由，如何在React中使用路由功能
+
+```console
+cnpm install react-router-dom -S
+```
+
+- App.js
