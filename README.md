@@ -135,3 +135,5 @@ cnpm install antd -S
 ## 5-6 使用 Redux 完成 TodoList 删除功能_x264
 
 ## 5-7 ActionTypes 的拆分
+
+## 5-8 使用 actionCreator 统一创建 action
