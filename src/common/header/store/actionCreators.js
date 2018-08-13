@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const changeList = data => ({
 	type: constants.CHANGE_LIST,
+	// 转换成 imutable 数组
 	data: fromJS(data),
 	totalPage: Math.ceil(data.length / 10)
 })

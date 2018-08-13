@@ -3,7 +3,8 @@ import { fromJS } from 'immutable'
 
 const defaultState = fromJS({
 	focused: false,
-	mouseIn: false,
+  mouseIn: false,
+  // 变成 imutable 数组
 	list: [],
 	page: 1,
 	totalPage: 1
@@ -16,7 +17,8 @@ export default (state = defaultState, action) => {
 			return state.set('focused', true)
 		case constants.SEARCH_BLUR:
 			return state.set('focused', false)
-		case constants.CHANGE_LIST:
+    case constants.CHANGE_LIST:
+      // immutable merge 方法, 同时改变多个内容
 			return state.merge({
 				list: action.data,
 				totalPage: action.totalPage

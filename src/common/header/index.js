@@ -32,8 +32,10 @@ class Header extends Component {
 			handleMouseLeave,
 			handleChangePage
 		} = this.props
+		// list 是 imutable 数组, toJS 转化为普通 js 数组
 		const newList = list.toJS()
-		const pageList = []
+    const pageList = []
+    // async, 当有数据时才执行
 		if (newList.length) {
 			for (let i = (page - 1) * 10; i < page * 10; i++) {
 				pageList.push(
@@ -138,6 +140,26 @@ const mapDispathToProps = dispatch => {
 		},
 		handleInputBlur() {
 			dispatch(actionCreators.searchBlur())
+		},
+		handleMouseEnter() {
+			dispatch(actionCreators.mouseEnter())
+		},
+		handleMouseLeave() {
+			dispatch(actionCreators.mouseLeave())
+		},
+		handleChangePage(page, totalPage, spin) {
+			let originAngle = spin.style.transform.replace(/[^0-9]/gi, '')
+			if (originAngle) {
+				originAngle = parseInt(originAngle, 10)
+			} else {
+				originAngle = 0
+			}
+			spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)'
+			if (page < totalPage) {
+				dispatch(actionCreators.changePage(page + 1))
+			} else {
+				dispatch(actionCreators.changePage(1))
+			}
 		}
 	}
 }

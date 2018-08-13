@@ -225,3 +225,13 @@ cnpm install redux-immutable -S
 ## 7-11 热门搜索样式布局
 
 ## 7-12 Ajax获取推荐数据
+
+- header/store/actionCreator.js
+
+## 7-13 代码优化微调
+
+## 7-14 热门搜索换页功能实现
+
+- header/store/actionCreator.js
+- header/store/reducer.js
+- index.js
