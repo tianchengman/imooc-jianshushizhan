@@ -237,3 +237,5 @@ cnpm install redux-immutable -S
 - index.js
 
 ## 7-15 换页旋转动画效果的实现
+
+## 7-16 避免无意义的请求发送，提升组件性能
