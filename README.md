@@ -203,3 +203,5 @@ cnpm install styled-components -S
 ## 7-5 搜索框动画效果实现
 
 ## 7-6 使用 React-Redux 进行应用数据的管理
+
+## 7-7 使用 combineReducers 完成对数据的拆分管理
