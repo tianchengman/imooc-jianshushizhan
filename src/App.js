@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import store from './store'
 import Header from './common/header'
-// import Home from './pages/home'
+import Home from './pages/home'
 // import Detail from './pages/detail/loadable.js'
 // import Login from './pages/login'
 // import Write from './pages/write'
@@ -16,7 +16,7 @@ class App extends Component {
 					<div>
 						<Header />
             {/* exact 路径完全相等才显示 */}
-						{/* <Route path="/" exact component={Home} /> */}
+						<Route path="/" exact component={Home} />
 						{/* <Route path="/login" exact component={Login} /> */}
 						{/* <Route path="/write" exact component={Write} /> */}
 						{/* <Route path="/detail/:id" exact component={Detail} /> */}
