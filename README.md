@@ -185,3 +185,15 @@ cnpm install redux-saga -S
 ```console
 cnpm install react-redux -S
 ```
+
+## 7-1 项目目录搭建，Styled-Components 与 Reset.css 的结合使用
+
+- style.js
+
+```console
+cnpm install styled-components -S
+```
+
+## 7-2, 7-3 使用 styled-components 完成 Header 组件布局
+
+- header/index.js
