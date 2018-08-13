@@ -131,3 +131,5 @@ cnpm install antd -S
 ## 5-5 Action 和 Reducer 的编写
 
 - Todo.js
+
+## 5-6 使用 Redux 完成 TodoList 删除功能_x264

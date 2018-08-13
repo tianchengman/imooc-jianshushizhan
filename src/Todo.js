@@ -31,7 +31,7 @@ class Todo extends Component {
 					style={{ marginTop: '10px', width: '300px' }}
 					bordered
 					dataSource={this.state.list}
-					renderItem={item => <List.Item>{item}</List.Item>}
+					renderItem={(item, index) => <List.Item onClick={this.handleItemClick.bind(this, index)}>{item}</List.Item>}
 				/>
 			</div>
 		)
@@ -52,6 +52,14 @@ class Todo extends Component {
   handleBtnClick() {
     const action = {
       type: 'add_todo_item'
+    }
+    store.dispatch(action)
+  }
+
+  handleItemClick(index) {
+    const action = {
+      type: 'delete_todo_item',
+      index
     }
     store.dispatch(action)
   }

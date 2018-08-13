@@ -33,9 +33,14 @@ export default (state = defaultState, action) => {
 	if (action.type === 'add_todo_item') {
 		const newState = JSON.parse(JSON.stringify(state))
 		newState.list.push(newState.inputValue)
-    newState.inputValue = ''
-    console.log(newState)
-    return newState
+		newState.inputValue = ''
+		console.log(newState)
+		return newState
+	}
+	if (action.type === 'delete_todo_item') {
+		const newState = JSON.parse(JSON.stringify(state))
+		newState.list.splice(action.index, 1)
+		return newState
 	}
 	return state
 }
