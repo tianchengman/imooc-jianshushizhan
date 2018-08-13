@@ -9,6 +9,7 @@ class Topic extends PureComponent {
 			<TopicWrapper>
 				{list.map(item => (
 					<TopicItem key={item.get('id')}>
+            {/* item 是 imutable 对象, 使用 formJS .get() 来获取 */}
 						<img className="topic-pic" src={item.get('imgUrl')} alt="" />
 						{item.get('title')}
 					</TopicItem>

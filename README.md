@@ -249,3 +249,5 @@ cnpm install react-router-dom -S
 - App.js
 
 ## 8-2 首页组件的拆分
+
+## 8-3 首页专题区域布局及reducer的设计

@@ -2,6 +2,7 @@ import { fromJS } from 'immutable'
 import * as constants from './constants'
 
 const defaultState = fromJS({
+  // imutable 对象, 使用 formJS .get() 来获取
 	topicList: [],
 	articleList: [],
 	recommendList: [],
