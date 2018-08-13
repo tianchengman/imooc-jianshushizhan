@@ -152,3 +152,9 @@ cnpm install antd -S
 
 - TodoUI.js
 - Todo.js
+
+## 6-2 无状态组件
+
+- TodoUI.js
+- 当一个组件只有 render() 的时候，可以使用无状态组件替换
+- 无状态组件性能高
