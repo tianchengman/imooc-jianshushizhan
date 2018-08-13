@@ -1,10 +1,11 @@
 ﻿import {
 	CHANGE_INPUT_VALUE,
 	ADD_TODO_ITEM,
-	DELETE_TODO_ITEM,
-	INIT_LIST_ACTION
+	INIT_LIST_ACTION,
+  DELETE_TODO_ITEM,
+  GET_INIT_LIST
 } from './actionTypes'
-import axios from 'axios'
+// import axios from 'axios'
 
 export const getInputChangeAction = value => ({
 	type: CHANGE_INPUT_VALUE,
@@ -25,26 +26,31 @@ export const initListAction = data => ({
 	data
 })
 
-// 使用了 redux-thunk 中间件后能返回函数
-export const getTodoList = () => {
-  return (dispatch) => {
-    axios
-			.get('/todolist.json')
-			.then(res => {
-        // console.log(res.data)
-        const data = res.data
-        console.log(data)
-        const action = initListAction(data)
-        dispatch(action)
-        // store.dispatch(action)
-				// this.setState(() => {
-				// 	return {
-				// 		list: [...res.data]
-				// 	}
-				// })
-			})
-			.catch(() => {
-				alert('err')
-			})
-  }
-}
+// 使用了 redux-thunk 中间件后能返回函数, async
+// export const getTodoList = () => {
+//   return (dispatch) => {
+//     axios
+// 			.get('/todolist.json')
+// 			.then(res => {
+//         // console.log(res.data)
+//         const data = res.data
+//         console.log(data)
+//         const action = initListAction(data)
+//         dispatch(action)
+//         // store.dispatch(action)
+// 				// this.setState(() => {
+// 				// 	return {
+// 				// 		list: [...res.data]
+// 				// 	}
+// 				// })
+// 			})
+// 			.catch(() => {
+// 				alert('err')
+// 			})
+//   }
+// }
+
+// redux-saga
+export const getInitList = () => ({
+  type: GET_INIT_LIST
+})

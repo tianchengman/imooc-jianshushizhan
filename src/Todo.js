@@ -10,9 +10,10 @@ import store from './store/index'
 import {
 	getInputChangeAction,
 	getAddItemAction,
-  getDeleteItemAction,
   // initListAction,
-  getTodoList
+  // getTodoList,
+  getInitList,
+  getDeleteItemAction
 } from './store/actionCreators'
 import TodoUI from './TodoUI'
 // import axios from 'axios'
@@ -44,11 +45,9 @@ class Todo extends Component {
   
   // 组件被挂载到页面之后执行, 获取 ajax 数据
 	componentDidMount() {
-		// console.log('componentWillMount')
-		// axios
+    // axios
 		// 	.get('/todolist.json')
 		// 	.then(res => {
-    //     console.log(res.data)
     //     const data = res.data
     //     const action = initListAction(data)
     //     store.dispatch(action)
@@ -61,7 +60,11 @@ class Todo extends Component {
 		// 	.catch(() => {
 		// 		alert('err')
     // 	})
-    const action = getTodoList()
+    /* redux-thunk */
+    // const action = getTodoList()
+    // store.dispatch(action)
+    /* redux-saga */
+    const action = getInitList()
     store.dispatch(action)
 	}
 

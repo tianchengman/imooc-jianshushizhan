@@ -168,3 +168,11 @@ cnpm install antd -S
 ```console
 cnpm install redux-thunk -S
 ```
+
+## 6-5 什么是Redux的中间件
+
+## 6-6, 6-7 Redux-saga 中间件使用入门
+
+```console
+cnpm install redux-saga -S
+```
