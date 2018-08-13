@@ -137,3 +137,13 @@ cnpm install antd -S
 ## 5-7 ActionTypes 的拆分
 
 ## 5-8 使用 actionCreator 统一创建 action
+
+## 5-9 Redux 知识点复习补充
+
+- store 唯一
+- 只有 store 才能改变 state 内容
+- Reducer 必须是纯函数(固定输入固定输出)
+- createStore
+- store.dispatch
+- store.getState
+- store.subscribe
