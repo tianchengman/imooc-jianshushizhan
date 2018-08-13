@@ -176,3 +176,12 @@ cnpm install redux-thunk -S
 ```console
 cnpm install redux-saga -S
 ```
+
+## 6-8, 6-9, 6-10 如何使用 React-redux
+
+- TodoRedux.js
+- index.js
+
+```console
+cnpm install react-redux -S
+```

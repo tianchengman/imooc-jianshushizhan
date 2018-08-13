@@ -26,7 +26,7 @@ export const initListAction = data => ({
 	data
 })
 
-// 使用了 redux-thunk 中间件后能返回函数, async
+/* 使用了 redux-thunk 中间件后能返回函数, async */
 // export const getTodoList = () => {
 //   return (dispatch) => {
 //     axios
@@ -50,7 +50,7 @@ export const initListAction = data => ({
 //   }
 // }
 
-// redux-saga
+/* redux-saga */
 export const getInitList = () => ({
   type: GET_INIT_LIST
 })

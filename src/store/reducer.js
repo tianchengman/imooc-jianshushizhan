@@ -15,43 +15,68 @@ const reducer = combineReducers({
 export default reducer
 */
 
-import {
-	CHANGE_INPUT_VALUE,
-	ADD_TODO_ITEM,
-  DELETE_TODO_ITEM,
-  INIT_LIST_ACTION
-} from './actionTypes'
+// import {
+// 	CHANGE_INPUT_VALUE,
+// 	ADD_TODO_ITEM,
+//   DELETE_TODO_ITEM,
+//   INIT_LIST_ACTION
+// } from './actionTypes'
+
+// const defaultState = {
+// 	inputValue: '123',
+// 	list: [1, 2]
+// }
+
+// // reducer 可以接受 state, 但是不能修改 state
+// // state: previsouState
+// export default (state = defaultState, action) => {
+// 	if (action.type === CHANGE_INPUT_VALUE) {
+// 		// copy
+// 		const newState = JSON.parse(JSON.stringify(state))
+// 		newState.inputValue = action.value
+// 		// return to Store
+// 		return newState
+// 	}
+// 	if (action.type === ADD_TODO_ITEM) {
+// 		const newState = JSON.parse(JSON.stringify(state))
+// 		newState.list.push(newState.inputValue)
+// 		newState.inputValue = ''
+// 		console.log(newState)
+// 		return newState
+// 	}
+// 	if (action.type === DELETE_TODO_ITEM) {
+// 		const newState = JSON.parse(JSON.stringify(state))
+// 		newState.list.splice(action.index, 1)
+// 		return newState
+// 	}
+// 	if (action.type === INIT_LIST_ACTION) {
+// 		const newState = JSON.parse(JSON.stringify(state))
+// 		newState.list = action.data
+// 		return newState
+// 	}
+// 	return state
+// }
 
 const defaultState = {
-	inputValue: '123',
-	list: [1, 2]
+	inputValue: 'hello',
+	list: []
 }
 
-// reducer 可以接受 state, 但是不能修改 state
-// state: previsouState
 export default (state = defaultState, action) => {
-	if (action.type === CHANGE_INPUT_VALUE) {
-		// copy
+	if (action.type === 'change_input_value') {
 		const newState = JSON.parse(JSON.stringify(state))
 		newState.inputValue = action.value
-		// return to Store
 		return newState
 	}
-	if (action.type === ADD_TODO_ITEM) {
+	if (action.type === 'add_item') {
 		const newState = JSON.parse(JSON.stringify(state))
 		newState.list.push(newState.inputValue)
 		newState.inputValue = ''
-		console.log(newState)
 		return newState
 	}
-	if (action.type === DELETE_TODO_ITEM) {
+	if (action.type === 'delete_item') {
 		const newState = JSON.parse(JSON.stringify(state))
 		newState.list.splice(action.index, 1)
-		return newState
-	}
-	if (action.type === INIT_LIST_ACTION) {
-		const newState = JSON.parse(JSON.stringify(state))
-		newState.list = action.data
 		return newState
 	}
 	return state
