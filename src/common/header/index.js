@@ -11,16 +11,65 @@ import {
 	NavItem,
 	SearchWrapper,
 	NavSearch,
-	// SearchInfo,
-	// SearchInfoTitle,
-	// SearchInfoSwitch,
-	// SearchInfoList,
-	// SearchInfoItem,
+	SearchInfo,
+	SearchInfoTitle,
+	SearchInfoSwitch,
+	SearchInfoList,
+	SearchInfoItem,
 	Addition,
 	Button
 } from './style'
 
 class Header extends Component {
+	getListArea() {
+		const {
+			focused,
+			list,
+			page,
+			totalPage,
+			mouseIn,
+			handleMouseEnter,
+			handleMouseLeave,
+			handleChangePage
+		} = this.props
+		const newList = list.toJS()
+		const pageList = []
+		if (newList.length) {
+			for (let i = (page - 1) * 10; i < page * 10; i++) {
+				pageList.push(
+					<SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
+				)
+			}
+		}
+		if (focused || mouseIn) {
+			return (
+				<SearchInfo
+					onMouseEnter={handleMouseEnter}
+					onMouseLeave={handleMouseLeave}
+				>
+					<SearchInfoTitle>
+						热门搜索
+						<SearchInfoSwitch
+							onClick={() => handleChangePage(page, totalPage, this.spinIcon)}
+						>
+							<i
+								ref={icon => {
+									this.spinIcon = icon
+								}}
+								className="iconfont spin"
+							>
+								&#xe851;
+							</i>
+							换一批
+						</SearchInfoSwitch>
+					</SearchInfoTitle>
+					<SearchInfoList>{pageList}</SearchInfoList>
+				</SearchInfo>
+			)
+		} else {
+			return null
+		}
+	}
 	render() {
 		const {
 			focused,
@@ -52,6 +101,7 @@ class Header extends Component {
 						<i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>
 							&#xe614;
 						</i>
+						{this.getListArea()}
 					</SearchWrapper>
 				</Nav>
 				<Addition>
@@ -70,7 +120,7 @@ class Header extends Component {
 
 const mapStateToProps = state => {
 	return {
-    // immutable getIn 数据调用
+		// immutable getIn 数据调用
 		focused: state.getIn(['header', 'focused']),
 		list: state.getIn(['header', 'list']),
 		page: state.getIn(['header', 'page']),

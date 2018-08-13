@@ -221,3 +221,7 @@ cnpm install immutable -S
 ```console
 cnpm install redux-immutable -S
 ```
+
+## 7-11 热门搜索样式布局
+
+## 7-12 Ajax获取推荐数据
