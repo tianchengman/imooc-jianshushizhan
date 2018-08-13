@@ -1,4 +1,5 @@
-﻿import React, { Component } from 'react'
+﻿// import React, { Component } from 'react'
+import React from 'react'
 import 'antd/dist/antd.css'
 import { Input, Button, List } from 'antd'
 
@@ -22,7 +23,7 @@ const TodoUI = props => {
 				dataSource={props.list}
 				renderItem={(item, index) => (
 					<List.Item
-						onClick={index => {
+						onClick={() => {
 							props.handleItemClick(index)
 						}}
 					>

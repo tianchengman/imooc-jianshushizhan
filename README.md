@@ -162,3 +162,9 @@ cnpm install antd -S
 ## 6-3 Redux 中发送异步请求获取数据
 
 - 不会使用 charles
+
+## 6-4 使用Redux-thunk 中间件实现ajax数据请求
+
+```console
+cnpm install redux-thunk -S
+```

@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react'
 import 'antd/dist/antd.css'
-import { Input, Button, List } from 'antd'
+// import { Input, Button, List } from 'antd'
 import store from './store/index'
 // import {
 // 	CHANGE_INPUT_VALUE,
@@ -11,10 +11,11 @@ import {
 	getInputChangeAction,
 	getAddItemAction,
   getDeleteItemAction,
-  initListAction
+  // initListAction,
+  getTodoList
 } from './store/actionCreators'
 import TodoUI from './TodoUI'
-import axios from 'axios'
+// import axios from 'axios'
 
 class Todo extends Component {
 	constructor(props) {
@@ -43,23 +44,25 @@ class Todo extends Component {
   
   // 组件被挂载到页面之后执行, 获取 ajax 数据
 	componentDidMount() {
-		console.log('componentWillMount')
-		axios
-			.get('/todolist.json')
-			.then(res => {
-        console.log(res.data)
-        const data = res.data
-        const action = initListAction(data)
-        store.dispatch(action)
-				// this.setState(() => {
-				// 	return {
-				// 		list: [...res.data]
-				// 	}
-				// })
-			})
-			.catch(() => {
-				alert('err')
-			})
+		// console.log('componentWillMount')
+		// axios
+		// 	.get('/todolist.json')
+		// 	.then(res => {
+    //     console.log(res.data)
+    //     const data = res.data
+    //     const action = initListAction(data)
+    //     store.dispatch(action)
+		// 		// this.setState(() => {
+		// 		// 	return {
+		// 		// 		list: [...res.data]
+		// 		// 	}
+		// 		// })
+		// 	})
+		// 	.catch(() => {
+		// 		alert('err')
+    // 	})
+    const action = getTodoList()
+    store.dispatch(action)
 	}
 
 	handleInputChange(e) {

@@ -4,6 +4,7 @@
 	DELETE_TODO_ITEM,
 	INIT_LIST_ACTION
 } from './actionTypes'
+import axios from 'axios'
 
 export const getInputChangeAction = value => ({
 	type: CHANGE_INPUT_VALUE,
@@ -23,3 +24,27 @@ export const initListAction = data => ({
 	type: INIT_LIST_ACTION,
 	data
 })
+
+// 使用了 redux-thunk 中间件后能返回函数
+export const getTodoList = () => {
+  return (dispatch) => {
+    axios
+			.get('/todolist.json')
+			.then(res => {
+        // console.log(res.data)
+        const data = res.data
+        console.log(data)
+        const action = initListAction(data)
+        dispatch(action)
+        // store.dispatch(action)
+				// this.setState(() => {
+				// 	return {
+				// 		list: [...res.data]
+				// 	}
+				// })
+			})
+			.catch(() => {
+				alert('err')
+			})
+  }
+}
