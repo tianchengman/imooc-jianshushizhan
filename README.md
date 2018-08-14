@@ -269,3 +269,5 @@ cnpm install react-router-dom -S
 ## 9-1 详情页面布局
 
 ## 9-2 使用redux管理详情页面数据
+
+## 9-3 异步获取数据
