@@ -8,6 +8,7 @@ import { actionCreators } from './store'
 import { BackTop } from './style'
 import { HomeWrapper, HomeLeft, HomeRight } from './style'
 
+// PureComponent 已经实现了 shouldComponentUpdate()
 class Home extends PureComponent {
 	render() {
 		return (

@@ -8,6 +8,7 @@ class Recommend extends PureComponent {
 			<RecommendWrapper>
 				{this.props.list.map(item => {
 					return (
+            // 手动打开 http://localhost:3000/api/home.json 里面的两张图片
 						<RecommendItem imgUrl={item.get('imgUrl')} key={item.get('id')} />
 					)
 				})}
