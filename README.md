@@ -253,3 +253,5 @@ cnpm install react-router-dom -S
 ## 8-3 首页专题区域布局及reducer的设计
 
 ## 8-4 首页文章列表制作
+
+## 8-5 首页推荐部分代码编写
