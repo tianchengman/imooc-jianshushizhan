@@ -6,11 +6,11 @@ import { actionCreators } from './store'
 
 class Detail extends PureComponent {
 	render() {
-    // console.log(this.props.match.params.id)
+		// console.log(this.props.match.params.id)
 		return (
 			<DetailWrapper>
 				<Header>{this.props.title}</Header>
-        {/* 不会被转义 */}
+				{/* 不会被转义 */}
 				<Content dangerouslySetInnerHTML={{ __html: this.props.content }} />
 			</DetailWrapper>
 		)
