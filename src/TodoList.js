@@ -1,5 +1,4 @@
 ﻿import React, { Component, Fragment } from 'react'
-import axios from 'axios'
 import TodoItem from './TodoItem'
 
 class TodoList extends Component {
@@ -12,29 +11,29 @@ class TodoList extends Component {
 			inputValue: '',
 			list: []
 		}
-		this.handleChange = this.handleChange.bind(this)
-		this.handleClick = this.handleClick.bind(this)
-		this.handleDelete = this.handleDelete.bind(this)
+		this.handleInputChange = this.handleInputChange.bind(this)
+		this.handleBtnClick = this.handleBtnClick.bind(this)
+		this.handleItemDelete = this.handleItemDelete.bind(this)
 	}
 
 	render() {
 		console.log('render')
 		return (
-			// Fragment: Placeholder
+			// Fragment: Placeholder, 'return' only one tag
 			<Fragment>
 				<div>
-					{/* htmlFor: like 'for', focus */}
+					{/* htmlFor: like 'for', focus cursor */}
 					<label htmlFor="insert">input value:</label>
 					<input
 						id="insert"
 						className="input"
 						value={this.state.inputValue}
-						onChange={this.handleChange}
+						onChange={this.handleInputChange}
 						ref={input => {
 							this.input = input
 						}}
 					/>
-					<button onClick={this.handleClick}>submit</button>
+					<button onClick={this.handleBtnClick}>submit</button>
 				</div>
 				<ul
 					ref={ul => {
@@ -47,46 +46,6 @@ class TodoList extends Component {
 		)
 	}
 
-	// Mounting
-	// 组件即将挂载到页面的时刻执行
-	componentWillMount() {
-		console.log('componentWillMount')
-	}
-	// render()
-	// 组件被挂载到页面之后执行, 获取 ajax 数据
-	componentDidMount() {
-		console.log('componentWillMount')
-		axios
-			.get('/api/todolist')
-			.then(res => {
-				console.log(res.data)
-				this.setState(() => {
-					return {
-						list: [...res.data]
-					}
-				})
-			})
-			.catch(() => {
-				alert('err')
-			})
-	}
-
-	// Updation
-	// 组件被更新之前执行, 你的组件需要被更新吗?
-	shouldComponentUpdate() {
-		console.log('shouldComponentUpdate')
-		return true
-	}
-	// 组件被更新之前执行, shouldComponentUpdate return true 才执行
-	componentWillUpdate() {
-		console.log('componentWillUpdate')
-	}
-	// render()
-	// 组件更新完成之后执行
-	componentDidUpdate() {
-		console.log('componentDidUpdate')
-	}
-
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
 			return (
@@ -94,8 +53,8 @@ class TodoList extends Component {
 					{/*
           <li
             key={index}
-            onClick={this.handleDelete.bind(this)}
-            // can write <h1>hello</h1>
+            onClick={this.handleItemDelete.bind(this, index)}
+            // dangerouslySetInnerHTML: can write `<h1>hello</h1>`
             dangerouslySetInnerHTML={{__html: item}}
           >
             {item}
@@ -104,14 +63,14 @@ class TodoList extends Component {
 					<TodoItem
 						content={item}
 						index={index}
-						deleteItem={this.handleDelete}
+						deleteItem={this.handleItemDelete}
 					/>
 				</div>
 			)
 		})
 	}
 
-	handleChange(e) {
+	handleInputChange(e) {
 		// const value = e.target.value
 		const value = this.input.value
 		// Can be omitted 'return', async Performance optimization
@@ -123,15 +82,12 @@ class TodoList extends Component {
 				inputValue: value
 			}
 		})
-		// change data
-		// immutable: state not allow to change
 		// this.setState({
-		// 	// cover origin data
 		// 	inputValue: e.target.value
 		// })
 	}
 
-	handleClick() {
+	handleBtnClick() {
 		// this.setState({
 		// 	list: [...this.state.list, this.state.inputValue],
 		// 	inputValue: ''
@@ -150,7 +106,8 @@ class TodoList extends Component {
 		)
 	}
 
-	handleDelete(index) {
+	handleItemDelete(index) {
+    // copy origin list, because 'immutable': state not allow to change
 		// const list = [...this.state.list]
 		// list.splice(index, 1)
 		// this.setState({

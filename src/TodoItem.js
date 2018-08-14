@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 class TodoItem extends Component {
 	constructor(props) {
     super(props)
-    // Performance optimization
+    // optimize
 		this.handleClick = this.handleClick.bind(this)
 	}
 

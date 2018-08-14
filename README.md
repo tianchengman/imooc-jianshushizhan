@@ -22,28 +22,26 @@ create-react-app imooc-jiansh
 
 ## 3-1 使用React编写TodoList功能
 
-- TodoList.js
+- Fragment: Placeholder, 'return' only one tag
 
 ## 3-2 React 中的响应式设计思想和事件绑定
 
-- TodoList.js
-
 ## 3-3 实现 TodoList 新增删除功能
 
-- TodoList.js
+- immutable: state not allow to change
 
 ## 3-4 JSX语法细节补充
 
-- TodoList.js
+- class -> className: `<div className="name"></div>`
+- dangerouslySetInnerHTML: can write `<h1>hello</h1>`
+- `dangerouslySetInnerHTML={{__html: item}}`
 
 ## 3-5 拆分组件与组件之间的传值
 
-- TodoList.js
-- TodoItem.js
+- **TodoList.js**
+- **TodoItem.js**
 
 ## 3-6 TodoList 代码优化
-
-- TodoList.js
 
 ## 3-7 围绕 React 衍生出的思考
 
