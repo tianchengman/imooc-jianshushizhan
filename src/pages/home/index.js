@@ -9,10 +9,6 @@ import { BackTop } from './style'
 import { HomeWrapper, HomeLeft, HomeRight } from './style'
 
 class Home extends PureComponent {
-	handleScrollTop() {
-		window.scrollTo(0, 0)
-	}
-
 	render() {
 		return (
 			<HomeWrapper>
@@ -43,6 +39,10 @@ class Home extends PureComponent {
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.props.changeScrollTopShow)
+	}
+
+	handleScrollTop() {
+		window.scrollTo(0, 0)
 	}
 
 	bindEvents() {

@@ -11,7 +11,9 @@ const defaultState = fromJS({
 })
 
 const changeHomeData = (state, action) => {
+  // merge: 操作多个 immutable 对象
 	return state.merge({
+    // fromJS: 普通对象转换为 immutable 对象
 		topicList: fromJS(action.topicList),
 		articleList: fromJS(action.articleList),
 		recommendList: fromJS(action.recommendList)
