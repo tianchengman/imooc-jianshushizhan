@@ -1,17 +1,17 @@
-import { fromJS } from 'immutable';
-import * as constants from './constants';
+import { fromJS } from 'immutable'
+import * as constants from './constants'
 
 const defaultState = fromJS({
 	login: false
-});
+})
 
 export default (state = defaultState, action) => {
-	switch(action.type) {
+	switch (action.type) {
 		case constants.CHANGE_LOGIN:
-			return state.set('login', action.value);
+			return state.set('login', action.value)
 		case constants.LOGOUT:
-			return state.set('login', action.value);
+			return state.set('login', action.value)
 		default:
-			return state;
+			return state
 	}
 }
