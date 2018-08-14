@@ -275,3 +275,5 @@ cnpm install react-router-dom -S
 ## 9-4 页面路由参数的传递
 
 ## 9-5 登陆页面布局
+
+## 9-6 登陆功能实现

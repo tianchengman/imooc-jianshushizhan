@@ -34,8 +34,8 @@ class Header extends Component {
 		} = this.props
 		// list 是 imutable 数组, toJS 转化为普通 js 数组
 		const newList = list.toJS()
-    const pageList = []
-    // async, 当有数据时才执行
+		const pageList = []
+		// async, 当有数据时才执行
 		if (newList.length) {
 			for (let i = (page - 1) * 10; i < page * 10; i++) {
 				pageList.push(
@@ -77,9 +77,9 @@ class Header extends Component {
 			focused,
 			handleInputFocus,
 			handleInputBlur,
-			list
-			// login,
-			// logout
+			list,
+			login,
+			logout
 		} = this.props
 		return (
 			<HeaderWrapper>
@@ -89,6 +89,15 @@ class Header extends Component {
 				<Nav>
 					<NavItem className="left active">首页</NavItem>
 					<NavItem className="left">下载App</NavItem>
+					{login ? (
+						<NavItem className="right" onClick={logout}>
+							退出
+						</NavItem>
+					) : (
+						<Link to="/login">
+							<NavItem className="right">登陆</NavItem>
+						</Link>
+					)}
 					<NavItem className="right">
 						<i className="iconfont">&#xe636;</i>
 					</NavItem>
@@ -160,6 +169,9 @@ const mapDispathToProps = dispatch => {
 			} else {
 				dispatch(actionCreators.changePage(1))
 			}
+		},
+		logout() {
+			dispatch(loginActionCreators.logout())
 		}
 	}
 }
