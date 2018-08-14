@@ -91,7 +91,8 @@ class TodoList extends Component {
 		// this.setState({
 		// 	list: [...this.state.list, this.state.inputValue],
 		// 	inputValue: ''
-		// })
+    // })
+    // prevState: What is the data before modifying the data?
 		this.setState(
 			prevState => {
 				return {
