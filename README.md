@@ -267,3 +267,5 @@ cnpm install react-router-dom -S
 ## 8-10 首页性能优化及路由跳转
 
 ## 9-1 详情页面布局
+
+## 9-2 使用redux管理详情页面数据

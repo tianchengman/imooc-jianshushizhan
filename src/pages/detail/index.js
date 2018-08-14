@@ -9,6 +9,7 @@ class Detail extends PureComponent {
 		return (
 			<DetailWrapper>
 				<Header>{this.props.title}</Header>
+        {/* 不会被转义 */}
 				<Content dangerouslySetInnerHTML={{ __html: this.props.content }} />
 			</DetailWrapper>
 		)
