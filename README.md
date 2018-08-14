@@ -271,3 +271,5 @@ cnpm install react-router-dom -S
 ## 9-2 使用redux管理详情页面数据
 
 ## 9-3 异步获取数据
+
+## 9-4 页面路由参数的传递
