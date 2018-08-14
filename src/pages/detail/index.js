@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+// 有能力获取 router 里面所有内容
 import { withRouter } from 'react-router-dom'
 import { DetailWrapper, Header, Content } from './style'
 import { actionCreators } from './store'

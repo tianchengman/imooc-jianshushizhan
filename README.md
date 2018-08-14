@@ -279,3 +279,11 @@ cnpm install react-router-dom -S
 ## 9-6 登陆功能实现
 
 ## 9-7 登陆鉴权及代码优化
+
+## 9-8 异步组件及withRouter路由方法的使用
+
+```console
+cnpm install react-loadable -S
+```
+
+- loadable.js
