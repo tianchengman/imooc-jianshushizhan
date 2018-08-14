@@ -2,7 +2,7 @@ import { fromJS } from 'immutable'
 import * as constants from './constants'
 
 const defaultState = fromJS({
-  // imutable 对象, 使用 formJS .get() 来获取
+	// imutable 对象, 使用 formJS .get() 来获取
 	topicList: [],
 	articleList: [],
 	recommendList: [],
@@ -11,9 +11,9 @@ const defaultState = fromJS({
 })
 
 const changeHomeData = (state, action) => {
-  // merge: 操作多个 immutable 对象
+	// merge: 操作多个 immutable 对象
 	return state.merge({
-    // fromJS: 普通对象转换为 immutable 对象
+		// fromJS: 普通对象转换为 immutable 对象
 		topicList: fromJS(action.topicList),
 		articleList: fromJS(action.articleList),
 		recommendList: fromJS(action.recommendList)
@@ -22,8 +22,8 @@ const changeHomeData = (state, action) => {
 
 const addArticleList = (state, action) => {
 	return state.merge({
-		'articleList': state.get('articleList').concat(action.list),
-		'articlePage': action.nextPage
+		articleList: state.get('articleList').concat(action.list),
+		articlePage: action.nextPage
 	})
 }
 
