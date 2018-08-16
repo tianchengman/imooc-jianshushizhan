@@ -44,8 +44,15 @@ npm run start
 
 - class -> className: `<div className="name"></div>`
 - for -> htmlFor: `<label htmlFor="insert">input value:</label>`
-- dangerouslySetInnerHTML: can write `<h1>hello</h1>`
-- `dangerouslySetInnerHTML={{__html: item}}`
+
+```js
+<li
+  // dangerouslySetInnerHTML: can write `<h1>hello</h1>`
+  dangerouslySetInnerHTML={{__html: item}}
+>
+  {item}
+</li>
+```
 
 ## 3-5 拆分组件与组件之间的传值
 

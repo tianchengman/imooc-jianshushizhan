@@ -49,6 +49,7 @@ class TodoList extends Component {
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
 			return (
+        // `<div></div>` prevent return two element
 				<div key={item}>
 					{/*
           <li
