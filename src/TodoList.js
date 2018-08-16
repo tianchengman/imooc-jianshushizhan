@@ -19,7 +19,7 @@ class TodoList extends Component {
 	render() {
 		console.log('render')
 		return (
-			// Fragment: Placeholder, 'return' only one tag
+			// <Fragment>: package component, placeholder
 			<Fragment>
 				<div>
 					{/* htmlFor: like 'for', focus cursor */}
@@ -71,20 +71,21 @@ class TodoList extends Component {
 	}
 
 	handleInputChange(e) {
+    // target: <input> dom element
 		// const value = e.target.value
 		const value = this.input.value
-		// Can be omitted 'return', async Performance optimization
-		// this.setState(() => ({
-		// 	inputValue: value
-		// }))
+		// this.setState({
+		// 	inputValue: e.target.value
+    // })
 		this.setState(() => {
 			return {
 				inputValue: value
 			}
 		})
-		// this.setState({
-		// 	inputValue: e.target.value
-		// })
+    // Can be omitted 'return', async Performance optimization
+		// this.setState(() => ({
+		// 	inputValue: value
+		// }))
 	}
 
 	handleBtnClick() {

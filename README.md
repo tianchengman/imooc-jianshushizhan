@@ -28,11 +28,11 @@ npm run start
 - PWA: **registerServiceWorker.js**, in https server, if phone broken internet, cache before interface
 - **mainifest.json**: website use as App, store in computer as shortcut, define the shortcut content
 
-## 2-4 react中的组件
+## 2-4 react 中的组件
 
-## 3-1 使用React编写TodoList功能
+## 3-1 使用 React 编写TodoList功能
 
-- Fragment: Placeholder, 'return' only one tag
+- `<Fragment>`: package component, placeholder
 
 ## 3-2 React 中的响应式设计思想和事件绑定
 
