@@ -12,11 +12,21 @@ npm run start
 ## 2-2 React开发环境准备
 
 ```console
+npm i nvm
+nvm ls
+nvm install 8.9.1
+nvm use 8.9.1
 npm install create-react-app -g
 create-react-app imooc-jiansh
+npm install
+npm run start
 ```
 
 ## 2-3 工程目录文件简介
+
+- **yarn.lock**: project require package, version num
+- PWA: **registerServiceWorker.js**, in https server, if phone broken internet, cache before interface
+- **mainifest.json**: website use as App, store in computer as shortcut, define the shortcut content
 
 ## 2-4 react中的组件
 
