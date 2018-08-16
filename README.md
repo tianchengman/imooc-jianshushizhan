@@ -72,9 +72,11 @@ npm run start
 
 ## 4-1 React developer tools 安装及使用
 
+- chrome -> react
+
 ## 4-2 PropTypes 与 DefaultProps 的应用
 
-- TodoItem.js
+- **TodoItem.js**
 
 ## 4-3 props，state 与 render 函数的关系
 
