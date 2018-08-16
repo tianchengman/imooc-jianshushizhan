@@ -71,18 +71,18 @@ class TodoList extends Component {
 	}
 
 	handleInputChange(e) {
-    // target: <input> dom element
+		// target: <input> dom element
 		// const value = e.target.value
 		const value = this.input.value
 		// this.setState({
 		// 	inputValue: e.target.value
-    // })
+		// })
 		this.setState(() => {
 			return {
 				inputValue: value
 			}
 		})
-    // Can be omitted 'return', async Performance optimization
+		// Can be omitted 'return', async Performance optimization
 		// this.setState(() => ({
 		// 	inputValue: value
 		// }))
@@ -92,8 +92,8 @@ class TodoList extends Component {
 		// this.setState({
 		// 	list: [...this.state.list, this.state.inputValue],
 		// 	inputValue: ''
-    // })
-    // prevState: What is the data before modifying the data?
+		// })
+		// prevState: data that before modify data
 		this.setState(
 			prevState => {
 				return {
@@ -109,7 +109,7 @@ class TodoList extends Component {
 	}
 
 	handleItemDelete(index) {
-    // copy origin list, because 'immutable': state not allow to change
+		// copy origin list, because 'immutable': state not allow to change
 		// const list = [...this.state.list]
 		// list.splice(index, 1)
 		// this.setState({

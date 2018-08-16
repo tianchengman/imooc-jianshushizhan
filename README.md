@@ -30,7 +30,7 @@ npm run start
 
 ## 2-4 react 中的组件
 
-## 3-1 使用 React 编写TodoList功能
+## 3-1 使用 React 编写 TodoList 功能
 
 - `<Fragment>`: package component, placeholder
 
@@ -38,11 +38,12 @@ npm run start
 
 ## 3-3 实现 TodoList 新增删除功能
 
-- immutable: state not allow to change
+- 'immutable': state not allow to change
 
 ## 3-4 JSX语法细节补充
 
 - class -> className: `<div className="name"></div>`
+- for -> htmlFor: `<label htmlFor="insert">input value:</label>`
 - dangerouslySetInnerHTML: can write `<h1>hello</h1>`
 - `dangerouslySetInnerHTML={{__html: item}}`
 
