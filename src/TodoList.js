@@ -1,8 +1,12 @@
 ﻿import React, { Component, Fragment } from 'react'
+import axios from 'axios'
 import TodoItem from './TodoItem'
 
 class TodoList extends Component {
-  // 最优先执行的函数
+  // Initialization (life circle)
+  // setup props and state
+
+  // constuctor() simular life circle but not, component init will run
   constructor(props) {
     // invoked father constructor
     super(props)
@@ -17,10 +21,11 @@ class TodoList extends Component {
     this.handleItemDelete = this.handleItemDelete.bind(this)
   }
 
+  // render() simular life circle but not, component data change will run
   render() {
     console.log('render')
     return (
-      // <Fragment>: 占位包裹标签
+      // <Fragment>: Placeholder package
       <Fragment>
         <div>
           {/* htmlFor: like 'for', focus cursor */}
@@ -47,47 +52,84 @@ class TodoList extends Component {
     )
   }
 
+  // Mounting (life circle) (only invoked once)
+  // component soon mount in page
+  componentWillMount() {
+    console.log('componentWillMount')
+  }
+  // render()
+  // component mount in page after, get ajax data
+  componentDidMount() {
+    console.log('componentWillMount')
+    axios
+      .get('/api/todolist')
+      .then(res => {
+        console.log(res.data)
+        this.setState(() => {
+          return {
+            list: [...res.data]
+          }
+        })
+      })
+      .catch(() => {
+        alert('err')
+      })
+  }
+
+  // Updation (life circle)
+  // component update before, your component need to update ?
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate')
+    return true
+  }
+  // component update before, shouldComponentUpdate return true will carried out
+  componentWillUpdate() {
+    console.log('componentWillUpdate')
+  }
+  // render()
+  // component update after
+  componentDidUpdate() {
+    console.log('componentDidUpdate')
+  }
+
   getTodoItem() {
     return this.state.list.map((item, index) => {
       return (
-        // `<div></div>` prevent return two element (注释 + TodoItem)
         <div key={item}>
           {/*
-          // 光标自动聚焦
+          // Cursor autofocus
           <label htmlfor="insertArea">输入内容</label>
           <li
-            id="insertArea"
             key={index}
             onClick={this.handleItemDelete.bind(this, index)}
-            // dangerouslySetInnerHTML: 不希望被转义, 能用标签包裹内容显示效果
+            // dangerouslySetInnerHTML: can write `<h1>hello</h1>`
             dangerouslySetInnerHTML={{__html: item}}
           >
             {item}
           </li>
           */}
-          <TodoItem
-            index={index}
-            content={item}
-            deleteItem={this.handleItemDelete}
-          />
+          <TodoItem content={item} index={index} deleteItem={this.handleItemDelete} />
         </div>
       )
     })
   }
 
   handleInputChange(e) {
-    // target: <input> dom 节点
+    // target: <input> dom node
     // console.log(e.target.value)
     const value = this.input.value
+    // Can be omitted 'return', async Performance optimization
+    // this.setState(() => ({
+    // 	inputValue: value
+    // }))
     this.setState(() => {
       return {
         inputValue: value
       }
     })
-    // Can be omitted 'return', async Performance optimization
-    // this.setState(() => ({
-    // 	inputValue: value
-    // }))
+    // this.setState({
+    // 	inputValue: e.target.value
+    // })
   }
 
   handleBtnClick() {
@@ -96,28 +138,30 @@ class TodoList extends Component {
     // 	inputValue: ''
     // })
     // prevState: data that before modify data
+    // setState() it is async func
     this.setState(
       prevState => {
         return {
+          // copy origin list, because 'immutable': state not allow to change
           list: [...prevState.list, prevState.inputValue],
           inputValue: ''
         }
       },
       () => {
-        // ensure async setState() has been invoked
+        // ensure setState() has been invoked
         console.log(this.ul.querySelectorAll('div').length)
       }
     )
   }
 
   handleItemDelete(index) {
-    // copy origin list, because 'immutable': state not allow to change
     // const list = [...this.state.list]
     // list.splice(index, 1)
     // this.setState({
     // 	list: list
     // })
     this.setState(prevState => {
+      // copy origin list, because 'immutable': state not allow to change
       const list = [...prevState.list]
       list.splice(index, 1)
       return { list }
