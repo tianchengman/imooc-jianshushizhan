@@ -2,7 +2,8 @@
 import 'antd/dist/antd.css'
 import { Input, Button, List } from 'antd'
 
-const ReduxListUI = props => {
+// only one render(), call not status comp
+const ReduxListUI = (props) => {
 	return (
 		<div style={{ margin: '10px' }}>
 			<div>
