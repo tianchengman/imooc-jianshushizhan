@@ -50,7 +50,7 @@ class TodoList extends Component {
   getTodoItem() {
     return this.state.list.map((item, index) => {
       return (
-        // `<div></div>` prevent return two element
+        // `<div></div>` prevent return two element (注释 + TodoItem)
         <div key={item}>
           {/*
           // 光标自动聚焦
@@ -65,7 +65,11 @@ class TodoList extends Component {
             {item}
           </li>
           */}
-          <TodoItem content={item} index={index} deleteItem={this.handleItemDelete} />
+          <TodoItem
+            index={index}
+            content={item}
+            deleteItem={this.handleItemDelete}
+          />
         </div>
       )
     })
