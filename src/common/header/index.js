@@ -75,9 +75,9 @@ class Header extends Component {
 	render() {
 		const {
 			focused,
-			// handleInputFocus,
+			handleInputFocus,
 			handleInputBlur,
-			// list
+			list
 			// login,
 			// logout
 		} = this.props
@@ -105,14 +105,14 @@ class Header extends Component {
 						<CSSTransition in={focused} timeout={200} classNames="slide">
 							<NavSearch
 								className={focused ? 'focused' : ''}
-								// onFocus={() => handleInputFocus(list)}
+								onFocus={() => handleInputFocus(list)}
 								onBlur={handleInputBlur}
 							/>
 						</CSSTransition>
 						<i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>
 							&#xe614;
 						</i>
-						{/* {this.getListArea()} */}
+						{this.getListArea()}
 					</SearchWrapper>
 				</Nav>
 				<Addition>
@@ -135,11 +135,11 @@ const mapStateToProps = state => {
     // state is js obj, header is immutable obj
     // redux-immutable unify data format, change state, header to immutable obj
     // getIn(): immutable data invoked
-		// focused: state.getIn(['header', 'focused']),
-		// list: state.getIn(['header', 'list']),
-		// page: state.getIn(['header', 'page']),
-		// totalPage: state.getIn(['header', 'totalPage']),
-		// mouseIn: state.getIn(['header', 'mouseIn'])
+		focused: state.getIn(['header', 'focused']),
+		list: state.getIn(['header', 'list']),
+		page: state.getIn(['header', 'page']),
+		totalPage: state.getIn(['header', 'totalPage']),
+		mouseIn: state.getIn(['header', 'mouseIn'])
 		// login: state.getIn(['login', 'login'])
 	}
 }
